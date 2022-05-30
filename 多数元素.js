@@ -10,3 +10,14 @@ var majorityElement = function(nums){
 
 //时间复杂度：O（nlogn)
 //空间复杂度：O (logn)
+
+//解法二：哈希表
+var marorityElement = function(nums) {
+    let half = nums.length / 2;
+    let obj = { };
+    for( let num of nums){
+        obj[num] = ( obj[num] || 0 ) + 1;
+        if(obj[num] > half) return num;
+    }
+}
+
